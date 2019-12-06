@@ -3,6 +3,9 @@ from django.utils import timezone
 from .models import Post
 from .forms import PostForm
 
+def index(request):
+    return render(request, 'blog/index.html')
+
 def post_list(request):
     posts = Post.objects.all()
     # order_by('publised_date')

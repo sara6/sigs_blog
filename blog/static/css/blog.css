@@ -1,17 +1,16 @@
-.page-header {
-    background-color: #088da5;
-    margin-top: 0;
-    padding: 20px 20px 20px 40px;
+.landing-main {
+
 }
 
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
-    font-size: 36pt;
-    text-decoration: none;
-}
-
-.content {
-    margin-left: 40px;
+.landing-section {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: url("/static/surfboard.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 h1, h2, h3, h4 {
