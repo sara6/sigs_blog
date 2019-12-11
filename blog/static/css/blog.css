@@ -1,5 +1,5 @@
 
-
+/*LANDING PAGE*/
 .landing-section {
   min-height: 100vh;
   width: 100vw;
@@ -11,16 +11,31 @@
   background-size: cover;
 }
 
+A.class1 {
+  font-size: 150px;
+  color: #ffea00;
+  font-family: 'Bebas Neue', cursive;
+  text-decoration: none;
+}
+
 .page-header {
-    background-color: #C25100;
+    background-color: #282828;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 10px 10px 10px 60px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
-    font-size: 36pt;
+    color: #FF008B;
+    font-size: 46pt;
     text-decoration: none;
+}
+
+/*BASE- LOG IN/USER/NEW POST*/
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #2E86C1;
+    float: right;
+    font-size: 14pt;
+    padding: 20px 20px 20px;
 }
 
 .content {
@@ -43,12 +58,7 @@ h1, h2, h3, h4 {
     width: 100%;
 }
 
-.top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
-    float: right;
-    font-size: 26pt;
-    margin-right: 20px;
-}
+
 
 .post {
     margin-bottom: 70px;
