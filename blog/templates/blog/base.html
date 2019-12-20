@@ -4,6 +4,7 @@
     <title>SIGS  blog</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
@@ -11,8 +12,8 @@
 
 <body>
   <div class="page-header">
-    <a href="{% url 'about' %}">About</a>
-    <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'contact' %}" class="top-menu">Contact</a>
+    <a href="{% url 'about' %}" class="top-menu">About</a>
     {% if user.is_authenticated %}
       <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
       <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
@@ -29,6 +30,10 @@
           {% endblock %}
           </div>
       </div>
+  </div>
+
+  <div class="footer">
+    <a href="#" class="fa fa-instagram"></a>
   </div>
 
 </body>
