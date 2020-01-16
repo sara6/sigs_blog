@@ -1,11 +1,97 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Interactive maps for Django web apps</title>
+    <title>UK and Ireland</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/maps.css' %}">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
   </head>
+
   <body>
    <h1>Map time!</h1>
+   <div id='map'></div>
+
+    <script>
+      mapboxgl.accessToken="";
+       var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/sara-c-r/ck5fhfkqg05561ip05fzc86bu',
+        center: [-9.0568, 53.2707],
+        zoom: 6
+
+       });
+
+
+       var geojson = {
+        type: 'FeatureCollection',
+        features: [{
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-8.8659, 51.5966]
+          },
+          properties: {
+            title: 'Inchydoney',
+            description: ''
+          }
+        },
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-8.9826, 51.5630]
+          },
+          properties: {
+            title: 'Long strand',
+            description: ''
+          }
+        },
+
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-9.7812, 51.4698]
+          },
+          properties: {
+            title: 'Barley cove',
+            description: ''
+          }
+        },
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-9.0023, 51.5676]
+          },
+          properties: {
+            title: 'Owenahincha',
+            description: ''
+          }
+        }
+      ]
+      };
+
+
+      // add markers to map
+geojson.features.forEach(function(marker) {
+
+  // create a HTML element for each feature
+  var el = document.createElement('div');
+  el.className = 'marker';
+
+  // make a marker for each feature and add to the map
+  new mapboxgl.Marker(el)
+    .setLngLat(marker.geometry.coordinates)
+    .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+      .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+    .addTo(map);
+});
+
+
+    </script>
   </body>
 </html>
