@@ -1,31 +1,97 @@
-body {
-  margin: 0;
-  padding: 0;
-     }
+html, body
+{
+    height: 100%;
+    margin: 0;
+}
+
+.page-header {
+    height: 100px;
+    background-color: #3843d0;
+    margin-top: 0;
+    padding-top: 20px;
+    padding-left: 60px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #fff;
+    font-size: 46pt;
+    text-decoration: none;
+    font-family: 'Bebas Neue', cursive;
+    margin-top:0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+/*BASE- LOG IN/USER/NEW POST*/
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #6ecfbd;
+    float: right;
+    font-size: 16pt;
+    padding: 20px 20px 20px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.content {
+    margin-left: 40px;
+}
+
+
 
  #map {
-  position: absolute;
-  top: 20;
-  bottom: 10;
-  width: 100%;
-  height:800px;
+  min-height: 100%;
+  height: auto !important; /*Cause footer to stick to bottom in IE 6*/
+  height: 100%;
+  margin: 0 auto -100px; /*Allow for footer height*/
+  vertical-align:bottom;
+
      }
 
 .marker {
     background-image: url("/static/marker.svg");
     background-size: cover;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     cursor: pointer;
      }
 
 .mapboxgl-popup {
    max-width: 200px;
+   color: #C5C1C0;
      }
 
 .mapboxgl-popup-content {
     text-align: center;
-    color: #405cb1;
+    color: #1A2930;
     font-family: 'Open Sans', sans-serif;
+     }
+
+/*#geocoder{
+  float: top-left;
+}*/
+
+.footer {
+    height: 100px; /*Push must be same height as Footer */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #3843d0;
+    height:60px;
+    /*color: white;*/
+    text-align: center;
+     }
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: #F2F2F2;
+    text-align: center;
+    position: fixed;
      }

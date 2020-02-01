@@ -16,26 +16,57 @@ A.class1 {
   color: #ffea00;
   font-family: 'Bebas Neue', cursive;
   text-decoration: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
+h2 {
+  font-size: 80px;
+  color: #ffea00;
+  font-family: 'Bebas Neue', cursive;
+  text-decoration: none;
+}
+
+
+html, body
+{
+    height: 100%;
+    margin: 0;
+}
+
+/*NAVBAR*/
 .page-header {
-    background-color: #282828;
+    height: 100px;
+    background-color: #3843d0;
     margin-top: 0;
-    padding: 10px 10px 10px 60px;
+    padding-top: 20px;
+    padding-left: 60px;
+    padding-right: 0px;
+    padding-bottom: 0px;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #FF008B;
+    color: #fff;
     font-size: 46pt;
     text-decoration: none;
+    font-family: 'Bebas Neue', cursive;
+    margin-top:0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
 }
 
 /*BASE- LOG IN/USER/NEW POST*/
 .top-menu, .top-menu:hover, .top-menu:visited {
-    color: #2E86C1;
+    color: #6ecfbd;
     float: right;
-    font-size: 14pt;
+    font-size: 16pt;
     padding: 20px 20px 20px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.content {
+    margin-left: 40px;
 }
 
 .content {
@@ -73,26 +104,25 @@ h1, h2, h3, h4 {
 }
 
 
-
-
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #282828;
-  height:60px;
-  color: white;
-  text-align: center;
-}
+    height: 100px; /*Push must be same height as Footer */
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #3843d0;
+    height:60px;
+    /*color: white;*/
+    text-align: center;
+     }
 
 .fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-  color: #FF008B;
-  text-align: center;
-  position: fixed;
-}
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: #F2F2F2;
+    text-align: center;
+    position: fixed;
+     }

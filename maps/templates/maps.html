@@ -1,30 +1,53 @@
 {% load static %}
 
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>UK and Ireland</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.min.js'></script>
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.2.0/mapbox-gl-geocoder.css' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'css/maps.css' %}">
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet'/>
+
   </head>
 
   <body>
-   <h1>Map time!</h1>
+
+   <div class="page-header">
+     <a href="{% url 'contact' %}" class="top-menu">Contact</a>
+     <a href="{% url 'about' %}" class="top-menu">About</a>
+     <a href="{% url 'maps' %}" class="top-menu">Maps</a>
+     {% if user.is_authenticated %}
+       <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+       <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+       <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+     {% else %}
+             <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+     {% endif %}
+       <h1><a href="{% url 'post_list' %}">SIGS</a></h1>
+   </div>
+
+
    <div id='map'></div>
 
+
+
     <script>
-      mapboxgl.accessToken="";
+      mapboxgl.accessToken="pk.eyJ1Ijoic2FyYS1jLXIiLCJhIjoiY2s1Z2x4eDEwMDJiajNvbGNteWc5bXN1ayJ9.zqPxO5l6UUGyZb5o9JVQXw";
        var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/sara-c-r/ck5fhfkqg05561ip05fzc86bu',
+        style: 'mapbox://styles/sara-c-r/ck5i5qeqq0qgn1imsh5tded4g',
         center: [-9.0568, 53.2707],
         zoom: 6
 
        });
 
-
+       // add markers to map
        var geojson = {
         type: 'FeatureCollection',
         features: [{
@@ -75,8 +98,6 @@
       ]
       };
 
-
-      // add markers to map
 geojson.features.forEach(function(marker) {
 
   // create a HTML element for each feature
@@ -92,6 +113,23 @@ geojson.features.forEach(function(marker) {
 });
 
 
-    </script>
+
+    var geocoder = new MapboxGeocoder({ // Initialize the geocoder
+      accessToken: mapboxgl.accessToken, // Set the access token
+      mapboxgl: mapboxgl, // Set the mapbox-gl instance
+      marker: false, // Do not use the default marker style
+    });
+
+    // Add the geocoder to the map
+    map.addControl(geocoder, 'top-left');
+
+    
+
+  </script>
+
+    <div class="footer">
+      <a href="#" class="fa fa-instagram"></a>
+    </div>
+
   </body>
 </html>
