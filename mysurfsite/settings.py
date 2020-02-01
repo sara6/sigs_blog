@@ -27,7 +27,7 @@ SECRET_KEY = 't8d#)*&u03x3=ty154e&rz0%@bl*_7=^x1z&p3^9r+f9th1zde'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'azurewebsites.net']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'frankconstruct.azurewebsites.net']
 
 
 # Application definition
